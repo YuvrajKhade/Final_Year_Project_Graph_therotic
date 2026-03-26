@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Edge Test</title>
+    <style>
+        svg {
+            border: 2px solid #ccc;
+            background: white;
+        }
+        .test-edge {
+            stroke: #2c3e50;
+            stroke-width: 3;
+            opacity: 1;
+        }
+        .test-node {
+            fill: #3498db;
+            stroke: white;
+            stroke-width: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>SVG Edge Rendering Test</h1>
+    <p>If you see lines connecting the circles, SVG edges work!</p>
+    
+    <svg width="600" height="400">
+        <!-- Draw edges FIRST -->
+        <g class="edges">
+            <line class="test-edge" x1="100" y1="100" x2="300" y2="100" />
+            <line class="test-edge" x1="100" y1="100" x2="200" y2="250" />
+            <line class="test-edge" x1="300" y1="100" x2="400" y2="250" />
+            <line class="test-edge" x1="200" y1="250" x2="400" y2="250" />
+        </g>
+        
+        <!-- Draw nodes SECOND -->
+        <g class="nodes">
+            <circle class="test-node" cx="100" cy="100" r="30" />
+            <circle class="test-node" cx="300" cy="100" r="30" />
+            <circle class="test-node" cx="200" cy="250" r="30" />
+            <circle class="test-node" cx="400" cy="250" r="30" />
+        </g>
+        
+        <!-- Labels -->
+        <text x="100" y="105" text-anchor="middle" fill="white" font-weight="bold">1</text>
+        <text x="300" y="105" text-anchor="middle" fill="white" font-weight="bold">2</text>
+        <text x="200" y="255" text-anchor="middle" fill="white" font-weight="bold">3</text>
+        <text x="400" y="255" text-anchor="middle" fill="white" font-weight="bold">4</text>
+    </svg>
+    
+    <h2>Debug Info</h2>
+    <p>Expected: 4 blue circles connected by black lines</p>
+    <p>If lines are missing, check browser console for errors</p>
+    
+    <script>
+        console.log('SVG elements:', document.querySelectorAll('svg line').length, 'lines');
+        console.log('SVG circles:', document.querySelectorAll('svg circle').length, 'circles');
+    </script>
+</body>
+</html>

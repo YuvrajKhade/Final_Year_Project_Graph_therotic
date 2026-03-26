@@ -1,0 +1,243 @@
+/* ============================================================
+   LAYOUT
+============================================================ */
+body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+.animation-container {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.animation-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 3px solid #2ecc71;
+}
+.animation-header h1 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 6px; }
+.animation-header p  { color: #7f8c8d; font-size: 1rem; margin: 0; }
+
+/* ============================================================
+   CONTROLS
+============================================================ */
+.controls-panel {
+    background: #f8f9fa;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #e9ecef;
+}
+
+.control-btn {
+    padding: 9px 22px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.play-btn  { background: #2ecc71; color: white; }
+.play-btn:hover  { background: #27ae60; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(46,204,113,0.35); }
+.pause-btn { background: #f39c12; color: white; }
+.pause-btn:hover { background: #e67e22; transform: translateY(-1px); }
+.reset-btn { background: #e74c3c; color: white; }
+.reset-btn:hover { background: #c0392b; transform: translateY(-1px); }
+
+.step-indicator {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    background: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 2px solid #e9ecef;
+    display: inline-block;
+}
+
+.speed-label { font-weight: 600; color: #555; font-size: 0.85rem; }
+#speedValue  { font-weight: 700; color: #3498db; margin-left: 8px; }
+
+/* ============================================================
+   GRAPH PANEL — this must have a real height
+============================================================ */
+.graph-panel {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.panel-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid #ecf0f1;
+    background: #fdfdfe;
+}
+.panel-header h5 { color: #2c3e50; font-weight: 700; margin: 0 0 10px 0; font-size: 1rem; }
+
+.step-description {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border-left: 4px solid #95a5a6;
+    background: #f8f9fa;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+/* The SVG canvas — explicit height so graph is always visible */
+.graph-canvas {
+    flex: 1;
+    min-height: 560px;
+    position: relative;
+    background: #fafbfc;
+}
+
+#graphSvg {
+    display: block;
+    width: 100%;
+    height: 560px;
+}
+
+/* ============================================================
+   INFO CARDS (right column)
+============================================================ */
+.info-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+}
+.info-card h6 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ecf0f1;
+    font-size: 0.9rem;
+}
+
+/* Status card */
+.status-card {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+}
+.status-card h6 { color: white; border-bottom-color: rgba(255,255,255,0.25); }
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.status-item:last-child { border-bottom: none; }
+.status-label { font-size: 0.85rem; opacity: 0.9; }
+.status-value { font-weight: 700; font-size: 1rem; }
+
+/* Legend */
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: #444;
+}
+.legend-color {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Algorithm steps */
+.algorithm-steps {
+    color: #34495e;
+    line-height: 1.9;
+    padding-left: 18px;
+    font-size: 0.85rem;
+    margin: 0;
+}
+.algorithm-steps li { margin-bottom: 4px; }
+
+/* Time slots */
+.slots-card {
+    max-height: 260px;
+    overflow-y: auto;
+}
+.slots-card::-webkit-scrollbar { width: 6px; }
+.slots-card::-webkit-scrollbar-thumb { background: #3498db; border-radius: 6px; }
+
+.slot-item {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+}
+.slot-number { font-weight: 700; font-size: 0.85rem; }
+.slot-tasks  { color: #555; font-size: 0.82rem; margin-top: 3px; }
+
+/* ============================================================
+   SVG ELEMENTS - Edges and Nodes
+============================================================ */
+#graphSvg {
+    background: #ffffff;
+}
+
+.edge-layer {
+    pointer-events: none;
+}
+
+.graph-edge {
+    stroke: #2c3e50;
+    stroke-width: 3;
+    opacity: 1;
+    stroke-linecap: round;
+    fill: none;
+}
+
+.node-layer {
+    pointer-events: all;
+}
+
+.node-g { 
+    cursor: default;
+}
+
+.node-g:hover circle:first-of-type { 
+    filter: brightness(1.08);
+}
+
+/* ============================================================
+   LOADING STATE
+============================================================ */
+#loadingState {
+    text-align: center;
+    padding: 60px 20px;
+}

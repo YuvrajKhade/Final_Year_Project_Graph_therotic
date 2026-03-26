@@ -1,0 +1,151 @@
+Job_ID,Job_Name,Job_Type,User,CPU_Cores,Memory_GB,GPU_Required,Storage_GB,Duration_Minutes,Priority,Cluster,Submitted_Time,Status,Cost_USD
+J10000,ETL Pipeline_1,ETL Pipeline,user12,2,76,No,603,81,5,GPU-Cluster,16-02-2026 05:35,Queued,19.77
+J10001,ETL Pipeline_2,ETL Pipeline,user24,12,17,Yes,263,192,9,Memory-Cluster,15-02-2026 18:35,Completed,44.97
+J10002,Backup Job_3,Backup Job,user21,14,51,No,769,131,7,Memory-Cluster,15-02-2026 16:35,Queued,37.85
+J10003,ML Training_4,ML Training,user4,11,109,No,430,155,5,CPU-Cluster,14-02-2026 15:35,Queued,47.61
+J10004,Batch Analytics_5,Batch Analytics,user8,16,32,Yes,418,304,5,CPU-Cluster,15-02-2026 22:35,Completed,45.67
+J10005,Image Processing_6,Image Processing,user28,24,100,Yes,887,230,7,GPU-Cluster,13-02-2026 21:35,Running,46.92
+J10006,Batch Analytics_7,Batch Analytics,user21,1,72,No,209,105,3,GPU-Cluster,14-02-2026 12:35,Completed,36.95
+J10007,Video Encoding_8,Video Encoding,user29,19,55,No,405,8,2,CPU-Cluster,14-02-2026 19:35,Completed,32.05
+J10008,Video Encoding_9,Video Encoding,user18,11,36,No,642,230,9,GPU-Cluster,16-02-2026 03:35,Running,6.75
+J10009,Data Processing_10,Data Processing,user15,28,43,No,637,73,2,GPU-Cluster,16-02-2026 06:35,Queued,17.8
+J10010,Model Inference_11,Model Inference,user27,24,36,No,767,427,1,GPU-Cluster,14-02-2026 17:35,Completed,3.97
+J10011,Model Inference_12,Model Inference,user9,4,72,No,570,476,8,Memory-Cluster,15-02-2026 00:35,Completed,15.6
+J10012,Model Inference_13,Model Inference,user2,23,89,No,483,84,9,Memory-Cluster,15-02-2026 16:35,Running,46.95
+J10013,Simulation_14,Simulation,user30,4,68,No,863,118,9,GPU-Cluster,14-02-2026 06:35,Queued,1.62
+J10014,Batch Analytics_15,Batch Analytics,user12,31,59,No,958,88,7,CPU-Cluster,15-02-2026 10:35,Queued,23.52
+J10015,Web Service_16,Web Service,user30,13,19,Yes,429,360,4,Memory-Cluster,14-02-2026 11:35,Queued,8.39
+J10016,Batch Analytics_17,Batch Analytics,user27,2,67,No,787,46,9,CPU-Cluster,13-02-2026 10:35,Running,12.81
+J10017,Model Inference_18,Model Inference,user28,19,22,Yes,613,373,7,GPU-Cluster,15-02-2026 01:35,Queued,1.19
+J10018,Video Encoding_19,Video Encoding,user26,25,63,No,454,300,6,Memory-Cluster,13-02-2026 16:35,Queued,28.14
+J10019,API Request_20,API Request,user1,30,94,No,813,382,6,CPU-Cluster,16-02-2026 06:35,Completed,24.42
+J10020,Simulation_21,Simulation,user16,24,111,No,925,186,9,CPU-Cluster,15-02-2026 10:35,Completed,14.2
+J10021,Web Service_22,Web Service,user1,1,110,Yes,286,231,9,Memory-Cluster,15-02-2026 06:35,Running,25.57
+J10022,Database Query_23,Database Query,user20,20,45,Yes,990,188,7,Memory-Cluster,13-02-2026 09:35,Running,28.59
+J10023,Database Query_24,Database Query,user9,17,126,No,220,395,6,Memory-Cluster,14-02-2026 13:35,Completed,26.92
+J10024,ML Training_25,ML Training,user27,15,3,No,621,23,1,CPU-Cluster,14-02-2026 16:35,Completed,47.8
+J10025,Database Query_26,Database Query,user17,7,37,Yes,397,413,5,GPU-Cluster,13-02-2026 11:35,Completed,11.44
+J10026,Web Service_27,Web Service,user24,14,70,No,66,215,2,CPU-Cluster,15-02-2026 01:35,Completed,8.61
+J10027,ML Training_28,ML Training,user1,15,33,No,280,416,8,CPU-Cluster,14-02-2026 20:35,Completed,17.17
+J10028,Simulation_29,Simulation,user20,1,86,No,650,14,7,GPU-Cluster,15-02-2026 13:35,Completed,4.07
+J10029,Simulation_30,Simulation,user18,27,40,No,91,432,8,GPU-Cluster,14-02-2026 21:35,Running,4.71
+J10030,Image Processing_31,Image Processing,user27,31,10,No,503,204,3,Memory-Cluster,16-02-2026 02:35,Completed,34.54
+J10031,Database Query_32,Database Query,user20,25,29,No,244,210,6,Memory-Cluster,15-02-2026 08:35,Queued,11.59
+J10032,Database Query_33,Database Query,user4,15,89,Yes,144,189,5,GPU-Cluster,14-02-2026 13:35,Running,48.75
+J10033,Data Processing_34,Data Processing,user2,10,80,No,131,21,4,Memory-Cluster,13-02-2026 17:35,Queued,42.51
+J10034,Model Inference_35,Model Inference,user23,7,120,Yes,507,49,3,GPU-Cluster,14-02-2026 21:35,Completed,1.61
+J10035,Data Processing_36,Data Processing,user5,18,33,No,223,346,3,Memory-Cluster,14-02-2026 07:35,Queued,12.77
+J10036,Data Processing_37,Data Processing,user4,10,104,No,61,138,3,CPU-Cluster,15-02-2026 22:35,Queued,18.4
+J10037,API Request_38,API Request,user6,4,25,No,268,328,9,CPU-Cluster,14-02-2026 15:35,Completed,18
+J10038,API Request_39,API Request,user12,25,41,Yes,823,338,6,CPU-Cluster,14-02-2026 19:35,Running,3.14
+J10039,Backup Job_40,Backup Job,user2,25,78,No,829,352,6,Memory-Cluster,14-02-2026 00:35,Completed,40.82
+J10040,Simulation_41,Simulation,user24,5,85,No,22,301,9,CPU-Cluster,15-02-2026 19:35,Completed,22.95
+J10041,Backup Job_42,Backup Job,user8,22,81,No,556,263,8,CPU-Cluster,15-02-2026 20:35,Completed,8.79
+J10042,ETL Pipeline_43,ETL Pipeline,user10,20,35,No,552,79,7,CPU-Cluster,13-02-2026 13:35,Completed,6.32
+J10043,Batch Analytics_44,Batch Analytics,user25,2,51,No,405,203,7,CPU-Cluster,14-02-2026 10:35,Completed,35.41
+J10044,Model Inference_45,Model Inference,user14,6,39,No,223,344,9,Memory-Cluster,13-02-2026 07:35,Completed,32.36
+J10045,Image Processing_46,Image Processing,user18,15,6,Yes,175,378,5,CPU-Cluster,13-02-2026 15:35,Completed,6.76
+J10046,Simulation_47,Simulation,user18,23,98,Yes,367,167,2,GPU-Cluster,15-02-2026 18:35,Running,5.42
+J10047,Database Query_48,Database Query,user28,21,104,No,801,193,7,GPU-Cluster,14-02-2026 08:35,Queued,19.31
+J10048,Database Query_49,Database Query,user28,2,54,No,163,52,3,CPU-Cluster,13-02-2026 15:35,Queued,31.99
+J10049,Web Service_50,Web Service,user7,4,127,No,73,33,4,Memory-Cluster,13-02-2026 21:35,Queued,11.23
+J10050,Database Query_51,Database Query,user6,14,67,Yes,980,115,2,Memory-Cluster,13-02-2026 14:35,Completed,27.01
+J10051,Simulation_52,Simulation,user7,1,26,No,605,455,3,GPU-Cluster,13-02-2026 15:35,Completed,42.93
+J10052,Data Processing_53,Data Processing,user28,6,62,No,123,80,4,GPU-Cluster,14-02-2026 06:35,Running,45.7
+J10053,Web Service_54,Web Service,user10,5,111,No,990,350,6,Memory-Cluster,15-02-2026 05:35,Running,6.35
+J10054,Model Inference_55,Model Inference,user16,1,17,No,957,51,8,Memory-Cluster,15-02-2026 10:35,Completed,36.87
+J10055,ETL Pipeline_56,ETL Pipeline,user26,30,124,Yes,226,399,8,CPU-Cluster,13-02-2026 08:35,Queued,5.18
+J10056,Web Service_57,Web Service,user22,31,86,No,797,268,2,CPU-Cluster,15-02-2026 22:35,Queued,37.86
+J10057,Image Processing_58,Image Processing,user16,4,85,Yes,558,346,7,Memory-Cluster,14-02-2026 14:35,Completed,0.97
+J10058,Simulation_59,Simulation,user16,6,32,No,234,77,9,Memory-Cluster,15-02-2026 02:35,Completed,31.32
+J10059,Simulation_60,Simulation,user8,23,94,No,656,46,4,CPU-Cluster,15-02-2026 04:35,Completed,15.36
+J10060,Backup Job_61,Backup Job,user21,27,2,Yes,435,440,9,GPU-Cluster,13-02-2026 12:35,Completed,16.18
+J10061,Video Encoding_62,Video Encoding,user2,26,123,No,11,208,6,CPU-Cluster,15-02-2026 11:35,Completed,14.38
+J10062,ML Training_63,ML Training,user1,17,124,No,637,241,9,Memory-Cluster,16-02-2026 04:35,Completed,8.88
+J10063,Image Processing_64,Image Processing,user12,13,27,No,545,462,3,Memory-Cluster,14-02-2026 01:35,Completed,28.74
+J10064,Data Processing_65,Data Processing,user11,1,80,No,589,303,5,Memory-Cluster,15-02-2026 18:35,Completed,14.68
+J10065,Database Query_66,Database Query,user9,10,51,No,324,43,3,Memory-Cluster,14-02-2026 06:35,Completed,5.26
+J10066,Data Processing_67,Data Processing,user9,31,72,No,285,121,4,CPU-Cluster,16-02-2026 06:35,Running,3.64
+J10067,Image Processing_68,Image Processing,user4,25,56,Yes,835,87,1,CPU-Cluster,14-02-2026 04:35,Queued,32.21
+J10068,Batch Analytics_69,Batch Analytics,user5,21,101,Yes,301,184,5,GPU-Cluster,14-02-2026 05:35,Queued,18.36
+J10069,Data Processing_70,Data Processing,user21,4,45,No,48,289,6,GPU-Cluster,15-02-2026 14:35,Completed,28.52
+J10070,Backup Job_71,Backup Job,user14,17,102,Yes,185,242,1,Memory-Cluster,13-02-2026 21:35,Completed,12.26
+J10071,Batch Analytics_72,Batch Analytics,user2,19,42,No,238,86,4,CPU-Cluster,16-02-2026 00:35,Queued,4.01
+J10072,Video Encoding_73,Video Encoding,user17,26,107,No,180,341,5,CPU-Cluster,15-02-2026 22:35,Completed,23.76
+J10073,Data Processing_74,Data Processing,user9,30,58,Yes,123,466,9,Memory-Cluster,16-02-2026 01:35,Completed,1.5
+J10074,Batch Analytics_75,Batch Analytics,user18,18,58,Yes,240,212,3,Memory-Cluster,13-02-2026 17:35,Queued,2.41
+J10075,ETL Pipeline_76,ETL Pipeline,user18,26,21,No,994,317,6,CPU-Cluster,13-02-2026 11:35,Running,33.98
+J10076,Batch Analytics_77,Batch Analytics,user5,8,45,No,910,378,5,Memory-Cluster,14-02-2026 10:35,Completed,8.27
+J10077,Web Service_78,Web Service,user30,18,77,No,483,189,9,GPU-Cluster,16-02-2026 05:35,Completed,31.52
+J10078,Backup Job_79,Backup Job,user19,13,104,No,320,475,9,GPU-Cluster,13-02-2026 18:35,Queued,32.93
+J10079,Simulation_80,Simulation,user15,2,97,No,631,73,8,Memory-Cluster,14-02-2026 21:35,Completed,3.63
+J10080,Image Processing_81,Image Processing,user22,23,68,No,35,317,8,CPU-Cluster,13-02-2026 09:35,Completed,29.81
+J10081,ETL Pipeline_82,ETL Pipeline,user12,17,101,No,880,358,2,CPU-Cluster,14-02-2026 03:35,Queued,43.69
+J10082,Model Inference_83,Model Inference,user30,18,108,No,901,34,8,GPU-Cluster,13-02-2026 22:35,Completed,9.7
+J10083,API Request_84,API Request,user25,19,6,No,905,332,3,Memory-Cluster,15-02-2026 04:35,Queued,29.37
+J10084,Web Service_85,Web Service,user18,10,30,No,178,293,3,CPU-Cluster,15-02-2026 15:35,Completed,29.46
+J10085,Simulation_86,Simulation,user8,5,107,No,974,181,5,GPU-Cluster,15-02-2026 18:35,Queued,27.11
+J10086,ML Training_87,ML Training,user11,18,115,Yes,803,148,7,CPU-Cluster,15-02-2026 05:35,Running,6.62
+J10087,Data Processing_88,Data Processing,user17,6,47,No,115,220,2,Memory-Cluster,14-02-2026 14:35,Running,9.7
+J10088,Database Query_89,Database Query,user30,29,59,No,159,250,6,GPU-Cluster,14-02-2026 16:35,Completed,31.89
+J10089,Web Service_90,Web Service,user23,16,72,Yes,610,145,5,CPU-Cluster,15-02-2026 21:35,Completed,11.1
+J10090,Batch Analytics_91,Batch Analytics,user2,25,14,No,195,38,3,GPU-Cluster,16-02-2026 04:35,Queued,49.23
+J10091,Image Processing_92,Image Processing,user23,16,65,No,332,214,7,CPU-Cluster,16-02-2026 02:35,Completed,14.54
+J10092,Batch Analytics_93,Batch Analytics,user5,1,92,Yes,38,214,9,GPU-Cluster,14-02-2026 18:35,Queued,49.4
+J10093,Web Service_94,Web Service,user22,4,12,No,183,33,3,GPU-Cluster,15-02-2026 16:35,Running,11.79
+J10094,Model Inference_95,Model Inference,user16,10,50,No,73,247,2,Memory-Cluster,13-02-2026 13:35,Completed,41.29
+J10095,ETL Pipeline_96,ETL Pipeline,user29,3,123,No,802,308,1,CPU-Cluster,13-02-2026 12:35,Completed,44.96
+J10096,Image Processing_97,Image Processing,user23,21,122,Yes,292,366,6,Memory-Cluster,14-02-2026 11:35,Running,44.89
+J10097,Model Inference_98,Model Inference,user8,26,117,No,240,208,2,GPU-Cluster,15-02-2026 01:35,Queued,47.05
+J10098,Video Encoding_99,Video Encoding,user3,27,114,No,936,165,7,GPU-Cluster,14-02-2026 09:35,Queued,48.02
+J10099,Model Inference_100,Model Inference,user23,25,3,No,548,231,2,Memory-Cluster,15-02-2026 10:35,Running,47.67
+J10100,Video Encoding_101,Video Encoding,user29,20,62,Yes,546,390,9,GPU-Cluster,13-02-2026 09:35,Running,40.98
+J10101,ML Training_102,ML Training,user19,5,14,No,569,413,9,Memory-Cluster,14-02-2026 20:35,Completed,3.74
+J10102,Image Processing_103,Image Processing,user7,13,58,No,396,384,5,Memory-Cluster,13-02-2026 10:35,Running,37.7
+J10103,API Request_104,API Request,user24,18,85,No,507,376,7,CPU-Cluster,14-02-2026 09:35,Completed,38.25
+J10104,Simulation_105,Simulation,user9,8,115,Yes,699,81,2,Memory-Cluster,14-02-2026 19:35,Queued,13.78
+J10105,Backup Job_106,Backup Job,user10,24,83,Yes,784,8,5,Memory-Cluster,15-02-2026 15:35,Running,5.94
+J10106,Database Query_107,Database Query,user21,14,80,No,162,281,1,Memory-Cluster,13-02-2026 22:35,Running,18
+J10107,Batch Analytics_108,Batch Analytics,user30,19,54,No,598,470,7,GPU-Cluster,14-02-2026 22:35,Completed,20.24
+J10108,ML Training_109,ML Training,user29,22,18,No,335,124,5,GPU-Cluster,15-02-2026 06:35,Queued,12.02
+J10109,Video Encoding_110,Video Encoding,user11,27,17,Yes,774,226,1,Memory-Cluster,15-02-2026 15:35,Completed,14.59
+J10110,Simulation_111,Simulation,user3,17,22,No,237,277,9,GPU-Cluster,15-02-2026 04:35,Completed,10.38
+J10111,Simulation_112,Simulation,user21,29,39,No,975,107,1,Memory-Cluster,16-02-2026 06:35,Completed,45.86
+J10112,ETL Pipeline_113,ETL Pipeline,user25,14,123,No,823,259,8,Memory-Cluster,15-02-2026 02:35,Queued,9.01
+J10113,API Request_114,API Request,user4,26,113,Yes,712,351,9,Memory-Cluster,14-02-2026 23:35,Queued,6.45
+J10114,Video Encoding_115,Video Encoding,user26,9,125,No,849,408,6,GPU-Cluster,15-02-2026 01:35,Queued,0.3
+J10115,Model Inference_116,Model Inference,user17,16,104,No,608,407,5,CPU-Cluster,15-02-2026 02:35,Completed,3.97
+J10116,Data Processing_117,Data Processing,user20,15,117,No,827,170,7,Memory-Cluster,15-02-2026 03:35,Running,5.51
+J10117,Model Inference_118,Model Inference,user5,18,56,Yes,919,122,3,CPU-Cluster,15-02-2026 20:35,Completed,27.06
+J10118,Video Encoding_119,Video Encoding,user7,14,57,Yes,304,285,5,GPU-Cluster,14-02-2026 12:35,Completed,33.32
+J10119,Video Encoding_120,Video Encoding,user28,20,109,Yes,160,145,5,GPU-Cluster,13-02-2026 07:35,Running,49.33
+J10120,Video Encoding_121,Video Encoding,user21,26,19,Yes,252,245,1,Memory-Cluster,16-02-2026 01:35,Completed,28.12
+J10121,Batch Analytics_122,Batch Analytics,user12,13,67,No,416,417,1,Memory-Cluster,15-02-2026 03:35,Running,12.13
+J10122,Image Processing_123,Image Processing,user19,24,7,No,865,233,8,GPU-Cluster,14-02-2026 21:35,Completed,0.21
+J10123,Image Processing_124,Image Processing,user22,24,66,No,853,317,8,Memory-Cluster,15-02-2026 08:35,Completed,26.13
+J10124,ETL Pipeline_125,ETL Pipeline,user3,20,94,No,388,214,2,GPU-Cluster,14-02-2026 02:35,Running,17.6
+J10125,Video Encoding_126,Video Encoding,user1,17,99,Yes,112,67,9,CPU-Cluster,16-02-2026 00:35,Completed,9.6
+J10126,Database Query_127,Database Query,user28,31,79,Yes,495,136,2,CPU-Cluster,16-02-2026 00:35,Running,0.3
+J10127,Simulation_128,Simulation,user15,10,123,No,249,384,8,Memory-Cluster,16-02-2026 00:35,Completed,10.85
+J10128,Data Processing_129,Data Processing,user10,19,59,No,124,214,9,CPU-Cluster,15-02-2026 06:35,Completed,4.4
+J10129,Web Service_130,Web Service,user7,23,80,No,625,78,4,Memory-Cluster,15-02-2026 12:35,Completed,33.21
+J10130,ML Training_131,ML Training,user16,10,84,No,780,361,9,GPU-Cluster,14-02-2026 07:35,Completed,49.07
+J10131,Model Inference_132,Model Inference,user27,8,109,No,231,262,9,Memory-Cluster,16-02-2026 05:35,Running,41.79
+J10132,Simulation_133,Simulation,user23,8,102,No,874,115,6,Memory-Cluster,15-02-2026 12:35,Completed,3.22
+J10133,Batch Analytics_134,Batch Analytics,user1,30,41,Yes,794,386,8,CPU-Cluster,14-02-2026 13:35,Running,7.23
+J10134,Web Service_135,Web Service,user18,7,80,No,605,246,9,Memory-Cluster,13-02-2026 17:35,Queued,36.26
+J10135,Image Processing_136,Image Processing,user11,16,9,Yes,684,53,6,GPU-Cluster,14-02-2026 18:35,Running,18.43
+J10136,Simulation_137,Simulation,user17,1,48,No,383,468,9,CPU-Cluster,13-02-2026 19:35,Queued,28.14
+J10137,ETL Pipeline_138,ETL Pipeline,user21,5,11,No,124,125,1,CPU-Cluster,14-02-2026 09:35,Running,33.47
+J10138,Backup Job_139,Backup Job,user3,11,13,No,698,181,9,Memory-Cluster,13-02-2026 17:35,Completed,25.48
+J10139,ETL Pipeline_140,ETL Pipeline,user14,7,57,Yes,65,122,4,CPU-Cluster,15-02-2026 01:35,Completed,5.35
+J10140,Batch Analytics_141,Batch Analytics,user6,11,88,No,89,139,6,CPU-Cluster,13-02-2026 23:35,Completed,35.52
+J10141,Model Inference_142,Model Inference,user7,12,8,Yes,576,235,8,CPU-Cluster,14-02-2026 00:35,Queued,42.44
+J10142,Simulation_143,Simulation,user17,2,14,No,635,288,8,Memory-Cluster,14-02-2026 22:35,Completed,33.23
+J10143,Backup Job_144,Backup Job,user23,8,97,No,868,157,7,CPU-Cluster,15-02-2026 00:35,Completed,2.78
+J10144,Image Processing_145,Image Processing,user5,13,29,No,380,103,7,Memory-Cluster,14-02-2026 17:35,Completed,49.59
+J10145,Database Query_146,Database Query,user5,23,115,No,401,469,4,Memory-Cluster,14-02-2026 22:35,Completed,49.53
+J10146,Model Inference_147,Model Inference,user16,8,24,No,390,373,2,CPU-Cluster,15-02-2026 12:35,Completed,1.28
+J10147,Image Processing_148,Image Processing,user21,29,106,No,936,304,7,CPU-Cluster,14-02-2026 16:35,Running,19.34
+J10148,Backup Job_149,Backup Job,user7,18,80,No,643,240,4,Memory-Cluster,14-02-2026 01:35,Queued,36.53
+J10149,API Request_150,API Request,user25,30,91,Yes,424,398,8,CPU-Cluster,13-02-2026 09:35,Completed,27.68

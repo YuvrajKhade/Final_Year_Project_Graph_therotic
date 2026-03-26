@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Scheduling Analysis - Luby-MIS</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    
+    <!-- Zoom Modal -->
+    <div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
+        <span class="zoom-close" onclick="closeZoom()">&times;</span>
+        <div class="zoom-modal-content" onclick="event.stopPropagation()">
+            <h3 class="zoom-title" id="zoomTitle"></h3>
+            <img id="zoomImage" src="" alt="Zoomed visualization">
+        </div>
+    </div>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <h4>Analyzing Your Dataset...</h4>
+            <p>This may take a few moments. Please wait.</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="main-container">
+            
+            <!-- Header -->
+            <div class="header">
+                <h1><i class="fas fa-project-diagram"></i> Distributed Scheduling Analysis</h1>
+                <p>Multi-Domain Graph Coloring using Luby-MIS Algorithm</p>
+            </div>
+            
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <h3 class="mb-4"><i class="fas fa-upload"></i> Upload Your Dataset</h3>
+                
+                <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h4>Click to Upload CSV File</h4>
+                    <p>Drag and drop or click to browse</p>
+                    <input type="file" id="fileInput" accept=".csv" style="display: none;">
+                </div>
+                
+                <div id="fileInfo" class="mt-3" style="display: none;">
+                    <div class="alert alert-light">
+                        <i class="fas fa-file-csv"></i> <span id="fileName"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Configuration Section -->
+            <div class="config-section">
+                <h4 class="mb-3"><i class="fas fa-cog"></i> Conflict Rules Configuration</h4>
+                <p class="text-muted">Define how conflicts are detected in your dataset</p>
+                
+                <div id="conflictRules">
+                    <div class="conflict-rule">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <select class="form-select" id="ruleType1">
+                                    <option value="same_value">Same Value</option>
+                                    <option value="time_overlap">Time Overlap</option>
+                                    <option value="resource_exceed">Resource Exceed</option>
+                                </select>
+                            </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" id="ruleColumn1" placeholder="Enter column name(s)">
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-sm btn-outline-danger" onclick="removeRule(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <small class="text-muted d-block mt-2">
+                            Example: For same professor conflict, select "Same Value" and enter professor column name
+                        </small>
+                    </div>
+                </div>
+                
+                <button class="btn btn-outline-primary mt-3" onclick="addRule()">
+                    <i class="fas fa-plus"></i> Add Another Rule
+                </button>
+            </div>
+            
+            <!-- Analyze Button -->
+            <div class="text-center mb-4">
+                <button class="btn btn-analyze" id="analyzeBtn" onclick="analyzeDataset()" disabled>
+                    <i class="fas fa-chart-line"></i> Analyze Dataset
+                </button>
+            </div>
+            
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+                
+                <!-- Summary Cards -->
+                <div class="summary-card">
+                    <div class="row">
+                        <div class="col-md-4 summary-item">
+                            <h3 id="summaryNodes">0</h3>
+                            <p>Nodes</p>
+                        </div>
+                        <div class="col-md-4 summary-item">
+                            <h3 id="summaryEdges">0</h3>
+                            <p>Conflicts</p>
+                        </div>
+                        <div class="col-md-4 summary-item">
+                            <h3 id="summaryDegree">0</h3>
+                            <p>Max Degree</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Algorithm Results -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-trophy"></i> Algorithm Comparison Results</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Algorithms Tested:</h6>
+                                <span class="algorithm-badge badge-luby">Luby-MIS (Distributed)</span>
+                                <span class="algorithm-badge badge-greedy">Greedy Sequential</span>
+                                <span class="algorithm-badge badge-genetic">Genetic Algorithm</span>
+                                <span class="algorithm-badge badge-firstfit">First-Fit</span>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Scenarios Analyzed:</h6>
+                                <ul class="list-unstyled mb-0">
+                                    <li><i class="fas fa-check-circle text-success"></i> Co-located Datacenter (1ms latency)</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Distributed Cloud (20ms latency)</li>
+                                    <li><i class="fas fa-check-circle text-success"></i> Geo-distributed Edge (100ms latency)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visualizations -->
+                <h4 class="mb-3"><i class="fas fa-chart-bar"></i> Generated Visualizations</h4>
+                <div class="viz-grid" id="vizGrid">
+                    <!-- Visualization cards will be inserted here -->
+                </div>
+                
+                <!-- Animation -->
+                <div class="mt-4">
+                    <h4 class="mb-3"><i class="fas fa-film"></i> Algorithm Animation</h4>
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p class="mb-4">Step-by-step visualization of Luby-MIS algorithm execution</p>
+                            <button class="open-animation-btn" onclick="openAnimationWindow()">
+                                <i class="fas fa-external-link-alt"></i> Open Interactive Animation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download All Button -->
+                <div class="text-center mt-4">
+                    <a href="#" id="downloadAllBtn" class="btn btn-lg btn-success">
+                        <i class="fas fa-download"></i> Download All Results
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+</body>
+</html>
