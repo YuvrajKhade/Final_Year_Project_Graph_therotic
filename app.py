@@ -470,34 +470,90 @@ def build_generic_conflict_graph(df, conflict_rules):
                 # ── Rule 3: Resource Exceed ───────────────────────────────────
                 elif rule_type == 'resource_exceed':
                     col_str   = rule.get('column', '')
+                    # threshold comes from the rule dict (sent by the frontend)
+                    # Support both: rule['threshold'] = 100  OR  "cpu:100" legacy format
                     threshold = rule.get('threshold', 100)
 
                     if col_str:
+                        # Legacy support: "cpu,memory:150" encodes threshold after ':'
+                        # Only treat the last ':' as a threshold separator if the part
+                        # after it looks like a number (not a column name like "hh:mm")
                         if ':' in col_str:
-                            parts     = col_str.split(':')
-                            col_str   = parts[0]
+                            last_colon = col_str.rfind(':')
+                            possible_threshold = col_str[last_colon + 1:].strip()
                             try:
-                                threshold = float(parts[1])
-                            except Exception:
-                                pass
+                                threshold = float(possible_threshold)
+                                col_str   = col_str[:last_colon]
+                            except ValueError:
+                                pass  # ':' is part of a column name, keep col_str as-is
 
-                        cols = [c.strip() for c in col_str.split(',')]
+                        cols = [c.strip() for c in col_str.split(',') if c.strip()]
+
+                        # Validate columns exist
+                        missing = [c for c in cols if c not in df.columns]
+                        if missing:
+                            print(f"    Warning: resource_exceed — columns not found: {missing}")
+                            print(f"    Available columns: {list(df.columns)}")
+                            continue
+
                         try:
-                            total = 0.0
+                            total    = 0.0
+                            skipped  = False
+
                             for col in cols:
-                                if col in df.columns:
-                                    vi = df.iloc[i][col]
-                                    vj = df.iloc[j][col]
-                                    if pd.notna(vi) and pd.notna(vj):
-                                        total += float(vi) + float(vj)
-                            if total > threshold:
+                                vi = df.iloc[i][col]
+                                vj = df.iloc[j][col]
+
+                                # Skip pair if either value is missing
+                                if vi is None or vj is None:
+                                    skipped = True
+                                    break
+                                # pandas NA / NaN check
+                                try:
+                                    if pd.isna(vi) or pd.isna(vj):
+                                        skipped = True
+                                        break
+                                except (TypeError, ValueError):
+                                    pass
+
+                                # Robust numeric conversion: strip currency, %, commas
+                                def to_numeric(v):
+                                    if isinstance(v, (int, float)):
+                                        return float(v)
+                                    s = str(v).strip()
+                                    # Remove common non-numeric characters
+                                    s = s.replace(',', '').replace('%', '')
+                                    s = s.replace('$', '').replace('£', '').replace('€', '')
+                                    s = s.strip()
+                                    return float(s)  # raises ValueError if still non-numeric
+
+                                try:
+                                    total += to_numeric(vi) + to_numeric(vj)
+                                except (ValueError, TypeError) as e:
+                                    print(
+                                        f"    Warning: resource_exceed — cannot convert "
+                                        f"values '{vi}', '{vj}' in column '{col}' "
+                                        f"for rows {i},{j}: {e}"
+                                    )
+                                    skipped = True
+                                    break
+
+                            if not skipped and total > float(threshold):
                                 has_conflict = True
                                 break
-                        except Exception:
-                            pass
+
+                        except Exception as e:
+                            print(f"    Warning: resource_exceed check failed for rows {i},{j}: {e}")
 
             if has_conflict:
                 G.add_edge(i, j)
+
+    print(f"\nConflict graph built: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+    if G.number_of_edges() == 0:
+        print("  WARNING: No conflicts detected — check column names and rule types.")
+        print(f"  DataFrame columns available: {list(df.columns)}")
+        for idx, rule in enumerate(conflict_rules):
+            print(f"  Rule {idx + 1}: {rule}")
 
     return G
 

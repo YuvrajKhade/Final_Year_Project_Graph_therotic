@@ -1,0 +1,22 @@
+﻿Job_ID,Job_Name,Job_Type,User,CPU_Cores,Memory_GB,GPU_Required,Storage_GB,Duration_Minutes,Priority,Cluster,Submitted_Time,Status,Cost_USD
+J10000,ETL Pipeline_1,ETL Pipeline,user12,2,76,No,603,81,5,GPU-Cluster,16-02-2026 05:35,Queued,19.77
+J10001,ETL Pipeline_2,ETL Pipeline,user24,12,17,Yes,263,192,9,Memory-Cluster,15-02-2026 18:35,Completed,44.97
+J10002,Backup Job_3,Backup Job,user21,14,51,No,769,131,7,Memory-Cluster,15-02-2026 16:35,Queued,37.85
+J10003,ML Training_4,ML Training,user4,11,109,No,430,155,5,CPU-Cluster,14-02-2026 15:35,Queued,47.61
+J10004,Batch Analytics_5,Batch Analytics,user8,16,32,Yes,418,304,5,CPU-Cluster,15-02-2026 22:35,Completed,45.67
+J10005,Image Processing_6,Image Processing,user28,24,100,Yes,887,230,7,GPU-Cluster,13-02-2026 21:35,Running,46.92
+J10006,Batch Analytics_7,Batch Analytics,user21,1,72,No,209,105,3,GPU-Cluster,14-02-2026 12:35,Completed,36.95
+J10007,Video Encoding_8,Video Encoding,user29,19,55,No,405,8,2,CPU-Cluster,14-02-2026 19:35,Completed,32.05
+J10008,Video Encoding_9,Video Encoding,user18,11,36,No,642,230,9,GPU-Cluster,16-02-2026 03:35,Running,6.75
+J10009,Data Processing_10,Data Processing,user15,28,43,No,637,73,2,GPU-Cluster,16-02-2026 06:35,Queued,17.8
+J10010,Model Inference_11,Model Inference,user27,24,36,No,767,427,1,GPU-Cluster,14-02-2026 17:35,Completed,3.97
+J10011,Model Inference_12,Model Inference,user9,4,72,No,570,476,8,Memory-Cluster,15-02-2026 00:35,Completed,15.6
+J10012,Model Inference_13,Model Inference,user2,23,89,No,483,84,9,Memory-Cluster,15-02-2026 16:35,Running,46.95
+J10013,Simulation_14,Simulation,user30,4,68,No,863,118,9,GPU-Cluster,14-02-2026 06:35,Queued,1.62
+J10014,Batch Analytics_15,Batch Analytics,user12,31,59,No,958,88,7,CPU-Cluster,15-02-2026 10:35,Queued,23.52
+J10015,Web Service_16,Web Service,user30,13,19,Yes,429,360,4,Memory-Cluster,14-02-2026 11:35,Queued,8.39
+J10016,Batch Analytics_17,Batch Analytics,user27,2,67,No,787,46,9,CPU-Cluster,13-02-2026 10:35,Running,12.81
+J10017,Model Inference_18,Model Inference,user28,19,22,Yes,613,373,7,GPU-Cluster,15-02-2026 01:35,Queued,1.19
+J10018,Video Encoding_19,Video Encoding,user26,25,63,No,454,300,6,Memory-Cluster,13-02-2026 16:35,Queued,28.14
+J10019,API Request_20,API Request,user1,30,94,No,813,382,6,CPU-Cluster,16-02-2026 06:35,Completed,24.42
+J10020,Simulation_21,Simulation,user16,24,111,No,925,186,9,CPU-Cluster,15-02-2026 10:35,Completed,14.2
