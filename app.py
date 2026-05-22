@@ -726,12 +726,11 @@ def generate_visualizations(df, G, session_id):
         adata = df[df['algorithm'] == algo]
         summary.append([
             algo,
-            adata['architecture'].iloc[0],
             f"{adata['colors'].mean():.1f}",
             f"{adata['runtime_ms'].mean():.0f} ms",
             f"{adata['coordinator_bottleneck'].mean():.0f} ms"
         ])
-    cols  = ['Algorithm', 'Architecture', 'Avg Colors\n(Time Slots)', 'Avg Runtime', 'Coordinator\nBottleneck']
+    cols  = ['Algorithm', 'Avg Colors\n(Time Slots)', 'Avg Runtime', 'Coordinator\nBottleneck']
     table = ax.table(cellText=summary, colLabels=cols, cellLoc='center', loc='center')
     table.auto_set_font_size(False)
     table.set_fontsize(12)
