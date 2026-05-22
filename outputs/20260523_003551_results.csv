@@ -1,0 +1,13 @@
+scenario,algorithm,architecture,nodes,edges,max_degree,colors,rounds,runtime_ms,coordinator_bottleneck
+Co-located Datacenter,Luby-MIS,DISTRIBUTED,29,108,11,10,11,66.66889547320164,0.0
+Co-located Datacenter,Greedy Sequential,CENTRALIZED,29,108,11,10,29,73.805,4.205
+Co-located Datacenter,Genetic Algorithm,CENTRALIZED,29,108,11,10,50,468.9,97.5
+Co-located Datacenter,First-Fit,CENTRALIZED,29,108,11,10,29,55.00333333333334,2.8033333333333337
+Distributed Cloud,Luby-MIS,DISTRIBUTED,29,108,11,10,11,574.3279094640329,0.0
+Distributed Cloud,Greedy Sequential,CENTRALIZED,29,108,11,10,29,964.25,42.05
+Distributed Cloud,Genetic Algorithm,CENTRALIZED,29,108,11,10,50,1321.5,97.5
+Distributed Cloud,First-Fit,CENTRALIZED,29,108,11,10,29,932.8333333333333,28.033333333333335
+Geo-distributed Edge,Luby-MIS,DISTRIBUTED,29,108,11,10,11,2711.8395473201645,0.0
+Geo-distributed Edge,Greedy Sequential,CENTRALIZED,29,108,11,10,29,4686.4,168.2
+Geo-distributed Edge,Genetic Algorithm,CENTRALIZED,29,108,11,10,50,4917.5,97.5
+Geo-distributed Edge,First-Fit,CENTRALIZED,29,108,11,10,29,4612.933333333333,112.13333333333334
